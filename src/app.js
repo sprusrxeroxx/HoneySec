@@ -1,5 +1,6 @@
 const express = require('express');
 const cookieParser = require('cookie-parser');
+const router = require("./routes");
 require("dotenv").config();
 const PORT = process.env.PORT || 8080;
 
@@ -15,3 +16,5 @@ app.get('/', (req, res) => {
 app.listen(PORT, () => {
     console.log(`Listening on port ${PORT}`);
 });
+
+app.use(router);
